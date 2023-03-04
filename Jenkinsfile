@@ -7,6 +7,15 @@ pipeline {
   
   stages {
 
+    stage("Library Resources") {
+      steps {
+        script {
+          def konfig = libraryResource("config/build.json")
+          echo(konfig)
+        }
+      }
+    }
+
     stage("Hello Person") {
       steps {
         script {
